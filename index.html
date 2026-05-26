@@ -313,7 +313,11 @@ section.port-section { padding: 5rem 0; }
 .about-card {
   position: relative; border-radius: 1.5rem; border: 1px solid var(--border);
   background: var(--glass-bg); backdrop-filter: blur(14px); padding: 1.5rem;
-  aspect-ratio: 1; overflow: hidden;
+  aspect-ratio: 1; overflow: hidden; min-height: 280px;
+}
+@media(max-width: 480px) {
+  .about-card { aspect-ratio: unset; min-height: 240px; }
+  .about-initials { font-size: 3rem; }
 }
 .about-card::before { content: ""; position: absolute; inset: 0; background: var(--grad-accent); opacity: .08; }
 .about-card-inner { position: relative; height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
@@ -386,15 +390,7 @@ section.port-section { padding: 5rem 0; }
 .project-name { margin-top: .5rem; font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 700; }
 @media(min-width:768px){ .project-name { font-size: 1.75rem; } }
 .project-tag { margin-top: .25rem; font-size: .875rem; background: var(--grad-accent); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.project-arrow {
-  flex-shrink: 0; width: 2.75rem; height: 2.75rem; border-radius: 9999px;
-  border: 1px solid var(--border); display: flex; align-items: center; justify-content: center;
-  transition: all .3s; color: var(--fg);
-}
-.project-card:hover .project-arrow {
-  background: var(--grad-accent); color: var(--accent-fg); border-color: transparent;
-  transform: rotate(45deg); box-shadow: var(--shadow-glow);
-}
+.project-arrow { display: none; }
 .project-desc { margin-top: 1.25rem; color: var(--muted-fg); line-height: 1.65; }
 .project-stack { margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: .5rem; }
 .stack-tag { border-radius: 9999px; border: 1px solid var(--border); background: var(--bg); padding: .25rem .75rem; font-family: 'JetBrains Mono', monospace; font-size: .7rem; color: var(--muted-fg); }
@@ -782,9 +778,9 @@ svg { display: inline-block; vertical-align: middle; }
               <h3 class="project-name font-display">Nexus Solution</h3>
               <p class="project-tag">College Management System · Final Year Project</p>
             </div>
-            <div class="project-arrow">
+            <a href="https://nexus-campus-manangement-hub.vercel.app/" target="_blank" class="project-arrow" aria-label="Open project">
               <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-            </div>
+            </a>
           </div>
           <p class="project-desc">Role-based platform for Admin, Faculty, and Students with course enrolment, timetables, announcements, attendance, and secure authentication.</p>
           <div class="project-stack">
@@ -816,9 +812,9 @@ svg { display: inline-block; vertical-align: middle; }
               <h3 class="project-name font-display">Agri Tech Navigate</h3>
               <p class="project-tag">IoT Web Integration Platform</p>
             </div>
-            <div class="project-arrow">
+            <a href="https://github.com/Usmansaeed55592" target="_blank" class="project-arrow" aria-label="Open project">
               <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-            </div>
+            </a>
           </div>
           <p class="project-desc">Real-time dashboard streaming temperature, humidity, and soil-moisture data from physical sensors. Integrates OpenMeteo API with historical analytics.</p>
           <div class="project-stack">
@@ -849,9 +845,9 @@ svg { display: inline-block; vertical-align: middle; }
               <h3 class="project-name font-display">Al Fareed Zari House</h3>
               <p class="project-tag">Freelance Client Website</p>
             </div>
-            <div class="project-arrow">
+            <a href="https://al-fareed-zarri-house.vercel.app/" target="_blank" class="project-arrow" aria-label="Open project">
               <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-            </div>
+            </a>
           </div>
           <p class="project-desc">Responsive showcase for a Zari embroidery business with gallery, WhatsApp, Instagram, and Google Maps integration. Production-deployed.</p>
           <div class="project-stack">
@@ -981,7 +977,7 @@ svg { display: inline-block; vertical-align: middle; }
           <div class="cert-icon"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17 5.8 21.3l2.4-7.4L2 9.4h7.6z"/></svg></div>
           <div>
             <div class="cert-name font-display">Python for Everybody</div>
-            <div class="cert-org">Coursera · University of Michigan</div>
+            <div class="cert-org">Self-paced · Mosh Hamedani</div>
           </div>
         </div>
         <div class="cert-year font-mono">2024</div>
